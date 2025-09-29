@@ -1,7 +1,7 @@
 {
   "name": "quellabs/canvas-apache",
   "description": "Creates a public folder and copies index.php and .htaccess files",
-  "type": "library",
+  "type": "composer-plugin",
   "require": {
     "php": ">=8.2",
     "composer-plugin-api": "^2.0"
@@ -9,17 +9,11 @@
   "autoload": {
     "psr-4": {
       "Quellabs\\CanvasApache\\": "src/"
-    },
-    "classmap": [
-      "src/"
-    ]
+    }
   },
-  "scripts": {
-    "post-install-cmd": [
-      "Quellabs\\CanvasApache\\Installer::install"
-    ],
-    "post-update-cmd": [
-      "Quellabs\\CanvasApache\\Installer::install"
-    ]
-  }
+  "extra": {
+    "class": "Quellabs\\CanvasApache\\Plugin"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
